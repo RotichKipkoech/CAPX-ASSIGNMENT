@@ -136,12 +136,12 @@ class CacheSystem {
         this.cacheLevels = new ArrayList<>();
     }
 
-    // Add a new cache level with a given size and eviction policy
+    // Add a new cache level with a given size and eviction policy.
     public void addCacheLevel(int size, String evictionPolicy) {
         cacheLevels.add(new CacheLevel(size, evictionPolicy));
     }
 
-    // Retrieve the data from the cache levels
+    // Retrieve the data from the cache levels.
     public String get(String key) {
         for (CacheLevel level : cacheLevels) {
             String value = level.get(key);
@@ -151,7 +151,7 @@ class CacheSystem {
                 return value;
             }
         }
-        return null; // Cache miss
+        return null; // Cache miss.
     }
 
     // Insert the data into the L1 cache
